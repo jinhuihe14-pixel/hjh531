@@ -1,0 +1,94 @@
+spring:
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+          lower-case-service-id: true
+      routes:
+        - id: fresh-auth
+          uri: lb://fresh-auth
+          predicates:
+            - Path=/api/auth/**
+          filters:
+            - StripPrefix=2
+
+        - id: fresh-user
+          uri: lb://fresh-user
+          predicates:
+            - Path=/api/user/**
+          filters:
+            - StripPrefix=2
+
+        - id: fresh-product
+          uri: lb://fresh-product
+          predicates:
+            - Path=/api/product/**
+          filters:
+            - StripPrefix=2
+
+        - id: fresh-order
+          uri: lb://fresh-order
+          predicates:
+            - Path=/api/order/**
+          filters:
+            - StripPrefix=2
+
+        - id: fresh-warehouse
+          uri: lb://fresh-warehouse
+          predicates:
+            - Path=/api/warehouse/**
+          filters:
+            - StripPrefix=2
+
+        - id: fresh-delivery
+          uri: lb://fresh-delivery
+          predicates:
+            - Path=/api/delivery/**
+          filters:
+            - StripPrefix=2
+
+        - id: fresh-settlement
+          uri: lb://fresh-settlement
+          predicates:
+            - Path=/api/settlement/**
+          filters:
+            - StripPrefix=2
+
+        - id: fresh-aftersale
+          uri: lb://fresh-aftersale
+          predicates:
+            - Path=/api/aftersale/**
+          filters:
+            - StripPrefix=2
+
+      globalcors:
+        cors-configurations:
+          '[/**]':
+            allowed-origin-patterns: "*"
+            allowed-headers: "*"
+            allowed-methods: "*"
+            allow-credentials: true
+            max-age: 3600
+
+auth:
+  jwt:
+    secret: fresh-market-secret-key-2024-abcdefghijklmnopqrstuvwxyz
+    expire: 86400000
+  white-list:
+    - /api/auth/login
+    - /api/auth/register
+    - /api/auth/send-code
+    - /api/product/list
+    - /api/product/detail
+    - /api/product/category
+    - /actuator/**
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: "*"
+  endpoint:
+    health:
+      show-details: always

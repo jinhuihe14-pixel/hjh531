@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fresh.order.mapper.OrderWarehouseMapper">
+
+    <resultMap id="BaseResultMap" type="com.fresh.order.entity.OrderWarehouse">
+        <id column="id" property="id"/>
+        <result column="order_id" property="orderId"/>
+        <result column="order_no" property="orderNo"/>
+        <result column="warehouse_id" property="warehouseId"/>
+        <result column="warehouse_name" property="warehouseName"/>
+        <result column="status" property="status"/>
+        <result column="delivery_fee" property="deliveryFee"/>
+        <result column="rider_id" property="riderId"/>
+        <result column="delivery_time" property="deliveryTime"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+
+    <select id="selectByOrderId" resultMap="BaseResultMap">
+        SELECT * FROM order_warehouse WHERE order_id = #{orderId} AND deleted = 0
+    </select>
+
+    <select id="selectByOrderIds" resultMap="BaseResultMap">
+        SELECT * FROM order_warehouse WHERE order_id IN
+        <foreach collection="orderIds" item="orderId" open="(" separator="," close=")">
+            #{orderId}
+        </foreach>
+        AND deleted = 0
+    </select>
+
+</mapper>

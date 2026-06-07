@@ -1,0 +1,13 @@
+/Volumes/代码/solo/hjh531/fresh-common/src/main/java/com/fresh/common/page/PageResult.java
+/Volumes/代码/solo/hjh531/fresh-common/src/main/java/com/fresh/common/entity/BaseEntity.java
+/Volumes/代码/solo/hjh531/fresh-common/src/main/java/com/fresh/common/lock/DistributedLock.java
+/Volumes/代码/solo/hjh531/fresh-common/src/main/java/com/fresh/common/util/RedisUtil.java
+/Volumes/代码/solo/hjh531/fresh-common/src/main/java/com/fresh/common/exception/GlobalExceptionHandler.java
+/Volumes/代码/solo/hjh531/fresh-common/src/main/java/com/fresh/common/lock/DistributedLockAspect.java
+/Volumes/代码/solo/hjh531/fresh-common/src/main/java/com/fresh/common/context/UserContext.java
+/Volumes/代码/solo/hjh531/fresh-common/src/main/java/com/fresh/common/page/PageQuery.java
+/Volumes/代码/solo/hjh531/fresh-common/src/main/java/com/fresh/common/constants/CommonConstants.java
+/Volumes/代码/solo/hjh531/fresh-common/src/main/java/com/fresh/common/util/JwtUtil.java
+/Volumes/代码/solo/hjh531/fresh-common/src/main/java/com/fresh/common/result/R.java
+/Volumes/代码/solo/hjh531/fresh-common/src/main/java/com/fresh/common/result/ResultCode.java
+/Volumes/代码/solo/hjh531/fresh-common/src/main/java/com/fresh/common/exception/BusinessException.java

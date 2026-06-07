@@ -1,0 +1,82 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  display: flex;
+  height: 100vh;
+  background: $color-bg-page;
+}
+
+.sidebar {
+  width: 180rpx;
+  background: $color-bg-card;
+  flex-shrink: 0;
+  overflow-y: auto;
+}
+
+.sidebarItem {
+  padding: $spacing-lg $spacing-md;
+  text-align: center;
+  position: relative;
+  transition: all $transition-base;
+
+  &.active {
+    background: $color-bg-page;
+    color: $color-primary;
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 6rpx;
+      height: 32rpx;
+      background: $color-primary;
+      border-radius: 0 4rpx 4rpx 0;
+    }
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.sidebarIcon {
+  font-size: 40rpx;
+  margin-bottom: $spacing-xs;
+}
+
+.sidebarText {
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+
+  .active & {
+    color: $color-primary;
+    font-weight: $font-weight-medium;
+  }
+}
+
+.content {
+  flex: 1;
+  padding: $spacing-md;
+  overflow-y: auto;
+  min-width: 0;
+}
+
+.contentTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+  padding-left: $spacing-sm;
+}
+
+.productGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+}
+
+.productCard {
+  width: calc(50% - 12rpx);
+}

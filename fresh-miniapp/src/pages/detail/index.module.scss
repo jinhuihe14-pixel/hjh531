@@ -1,0 +1,221 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: 140rpx;
+}
+
+.banner {
+  width: 100%;
+  height: 750rpx;
+  background: $color-bg-card;
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+}
+
+.infoSection {
+  background: $color-bg-card;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+.priceRow {
+  display: flex;
+  align-items: baseline;
+}
+
+.symbol {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-price;
+}
+
+.price {
+  font-size: 60rpx;
+  font-weight: $font-weight-bold;
+  color: $color-price;
+  line-height: 1;
+  margin-left: 4rpx;
+}
+
+.originalPrice {
+  margin-left: $spacing-md;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+  text-decoration: line-through;
+}
+
+.tags {
+  margin-top: $spacing-md;
+  display: flex;
+  gap: $spacing-sm;
+}
+
+.tag {
+  padding: 4rpx 16rpx;
+  background: $color-tag-bg;
+  border-radius: $radius-xs;
+
+  &.orange {
+    background: $color-orange-light;
+  }
+}
+
+.tagText {
+  font-size: $font-size-xs;
+  color: $color-primary;
+
+  .orange & {
+    color: $color-orange;
+  }
+}
+
+.name {
+  margin-top: $spacing-md;
+  font-size: $font-size-xl;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  line-height: $line-height-tight;
+}
+
+.subtitle {
+  margin-top: $spacing-sm;
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.specSection {
+  background: $color-bg-card;
+  padding: $spacing-lg;
+  margin-bottom: $spacing-md;
+}
+
+.sectionTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+}
+
+.specList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+}
+
+.specItem {
+  padding: $spacing-sm $spacing-lg;
+  border: 2rpx solid $color-border;
+  border-radius: $radius-md;
+  transition: all $transition-base;
+
+  &.active {
+    border-color: $color-primary;
+    background: $color-primary-bg;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.specText {
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+
+  .active & {
+    color: $color-primary;
+    font-weight: $font-weight-medium;
+  }
+}
+
+.descSection {
+  background: $color-bg-card;
+  padding: $spacing-lg;
+}
+
+.descTitle {
+  font-size: $font-size-md;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+  margin-bottom: $spacing-md;
+}
+
+.descImage {
+  width: 100%;
+  margin-bottom: $spacing-sm;
+  border-radius: $radius-md;
+}
+
+.bottomBar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 140rpx;
+  background: $color-bg-card;
+  display: flex;
+  align-items: center;
+  padding: 0 $page-padding;
+  padding-bottom: env(safe-area-inset-bottom);
+  box-shadow: 0 -2rpx 12rpx rgba(0, 0, 0, 0.06);
+  z-index: 100;
+}
+
+.iconBtns {
+  display: flex;
+  gap: $spacing-xl;
+  margin-right: $spacing-lg;
+}
+
+.iconBtn {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.iconBtnIcon {
+  font-size: 44rpx;
+}
+
+.iconBtnText {
+  margin-top: 4rpx;
+  font-size: $font-size-xs;
+  color: $color-text-secondary;
+}
+
+.actionBtns {
+  flex: 1;
+  display: flex;
+  gap: $spacing-md;
+}
+
+.actionBtn {
+  @include button-reset;
+  flex: 1;
+  height: $button-height-lg;
+  border-radius: $radius-button;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  color: $color-text-white;
+
+  &.cart {
+    background: $color-orange;
+  }
+
+  &.buy {
+    background: linear-gradient(135deg, $color-primary 0%, $color-primary-light 100%);
+  }
+
+  &:active {
+    opacity: 0.9;
+  }
+}

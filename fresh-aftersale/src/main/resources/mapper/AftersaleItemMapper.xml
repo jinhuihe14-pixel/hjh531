@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.fresh.aftersale.mapper.AftersaleItemMapper">
+
+    <resultMap id="BaseResultMap" type="com.fresh.aftersale.entity.AftersaleItem">
+        <id column="id" property="id"/>
+        <result column="aftersale_id" property="aftersaleId"/>
+        <result column="sku_id" property="skuId"/>
+        <result column="sku_name" property="skuName"/>
+        <result column="price" property="price"/>
+        <result column="qty" property="qty"/>
+        <result column="subtotal" property="subtotal"/>
+        <result column="refund_qty" property="refundQty"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_time" property="updateTime"/>
+        <result column="deleted" property="deleted"/>
+    </resultMap>
+
+</mapper>

@@ -1,0 +1,235 @@
+@use '@/styles/variables.scss' as *;
+
+.page {
+  min-height: 100vh;
+  background: $color-bg-page;
+  padding-bottom: 120rpx;
+}
+
+.header {
+  background: linear-gradient(180deg, $color-primary 0%, $color-primary-light 100%);
+  padding: 88rpx $page-padding $spacing-lg;
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  margin-bottom: $spacing-md;
+}
+
+.locationText {
+  color: $color-text-white;
+  font-size: $font-size-md;
+  font-weight: $font-weight-medium;
+  margin-right: $spacing-xs;
+}
+
+.locationArrow {
+  color: $color-text-white;
+  font-size: $font-size-sm;
+  opacity: 0.8;
+}
+
+.searchBar {
+  display: flex;
+  align-items: center;
+  height: 72rpx;
+  background: rgba(255, 255, 255, 0.95);
+  border-radius: $radius-button;
+  padding: 0 $spacing-lg;
+}
+
+.searchIcon {
+  font-size: $font-size-lg;
+  color: $color-text-tertiary;
+  margin-right: $spacing-sm;
+}
+
+.searchInput {
+  flex: 1;
+  font-size: $font-size-md;
+  color: $color-text-primary;
+  background: transparent;
+}
+
+.bannerSection {
+  padding: 0 $page-padding;
+  margin-top: -$spacing-lg;
+  position: relative;
+  z-index: 2;
+}
+
+.banner {
+  width: 100%;
+  height: 280rpx;
+  border-radius: $radius-lg;
+  overflow: hidden;
+  box-shadow: $shadow-card;
+}
+
+.bannerImage {
+  width: 100%;
+  height: 100%;
+}
+
+.categorySection {
+  padding: $spacing-lg $page-padding;
+}
+
+.categoryGrid {
+  display: flex;
+  flex-wrap: wrap;
+  background: $color-bg-card;
+  border-radius: $radius-lg;
+  padding: $spacing-md 0;
+  box-shadow: $shadow-card;
+}
+
+.categoryItem {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: $spacing-md 0;
+
+  &:active {
+    opacity: 0.7;
+  }
+}
+
+.categoryIcon {
+  width: 88rpx;
+  height: 88rpx;
+  border-radius: $radius-round;
+  background: $color-primary-bg;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 48rpx;
+  margin-bottom: $spacing-sm;
+}
+
+.categoryName {
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+}
+
+.sectionTitle {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 $page-padding;
+  margin-bottom: $spacing-md;
+}
+
+.sectionTitleText {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-semibold;
+  color: $color-text-primary;
+}
+
+.sectionMore {
+  font-size: $font-size-sm;
+  color: $color-text-tertiary;
+}
+
+.flashSaleSection {
+  margin-bottom: $spacing-lg;
+}
+
+.flashSaleHeader {
+  display: flex;
+  align-items: center;
+  padding: $spacing-md $page-padding;
+  background: linear-gradient(90deg, $color-orange 0%, #FF9F43 100%);
+}
+
+.flashSaleTitle {
+  font-size: $font-size-lg;
+  font-weight: $font-weight-bold;
+  color: $color-text-white;
+}
+
+.flashSaleTimer {
+  margin-left: $spacing-md;
+  display: flex;
+  align-items: center;
+}
+
+.timeBox {
+  background: rgba(0, 0, 0, 0.2);
+  padding: 4rpx 12rpx;
+  border-radius: $radius-xs;
+  margin: 0 4rpx;
+}
+
+.timeText {
+  font-size: $font-size-sm;
+  color: $color-text-white;
+  font-weight: $font-weight-medium;
+}
+
+.flashSaleList {
+  padding: $spacing-md $page-padding;
+  background: $color-orange-light;
+}
+
+.flashSaleScroll {
+  @include scroll-x-container;
+}
+
+.flashSaleItem {
+  @include scroll-x-item(240rpx);
+  background: $color-bg-card;
+  border-radius: $radius-md;
+  overflow: hidden;
+  margin-right: $spacing-md;
+
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.flashSaleImage {
+  width: 100%;
+  height: 240rpx;
+}
+
+.flashSaleInfo {
+  padding: $spacing-sm;
+}
+
+.flashSaleName {
+  font-size: $font-size-sm;
+  color: $color-text-primary;
+  @include text-ellipsis;
+}
+
+.flashSalePrice {
+  margin-top: $spacing-xs;
+  font-size: $font-size-md;
+  font-weight: $font-weight-bold;
+  color: $color-price;
+}
+
+.flashSaleOriginal {
+  margin-left: $spacing-xs;
+  font-size: $font-size-xs;
+  color: $color-text-tertiary;
+  text-decoration: line-through;
+}
+
+.productSection {
+  padding: 0 $page-padding;
+  padding-bottom: $spacing-lg;
+}
+
+.productGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: $spacing-md;
+}
+
+.productCard {
+  width: calc(50% - 12rpx);
+}
